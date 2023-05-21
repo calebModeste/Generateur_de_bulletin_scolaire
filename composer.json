@@ -1,0 +1,16 @@
+{
+    "name": "tsiba/generateur_de_bulletin_scolaire",
+    "description": "project",
+    "autoload": {
+        "psr-4": {
+            "Run\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "modeste TSIBA",
+            "email": "tsibacaleb@gmail.com"
+        }
+    ],
+    "require": {}
+}
