@@ -8,7 +8,5 @@ class Security{
         $data = htmlspecialchars($data);
         return $data;
       }
-    function verifExistanceUser(){
-      
-    }
+
 }

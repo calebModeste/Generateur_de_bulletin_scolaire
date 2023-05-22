@@ -43,15 +43,10 @@
 
                 if (!empty($name) && !empty($lastname) && !empty($code)) {
                     
-                    echo "<h3>LES ENVOIE</h3>";
-                    echo $name."</br>";
-                    
-                    echo $lastname."</br>";
-                    echo $code."</br>";
-
-                    
                     try{
                         $result= $connect->exePrepaQuery($user->setUser($code ,$name ,$lastname));
+                        $moyenne = $connect->exePrepaQuery($bulletin->moyennecreate($code));
+                        header('location: ./index.php');
 
                     }
                     catch(PDOException $ex){

@@ -34,7 +34,6 @@
                 <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                     <a href="./bulletin.php?code=<?=$col['code']?>" class="btn btn-primary active" aria-current="page">bulletin</a>
                     <a href="./note_add.php?code=<?=$col['code']?>" class="btn btn-primary">ajout note</a>
-                    <a href="./renvoyer.php?code=<?=$col['code']?>" class="btn btn-primary">renvoyer</a>
 
                 </div>
             </li>

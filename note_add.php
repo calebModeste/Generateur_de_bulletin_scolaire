@@ -14,9 +14,13 @@
     <!-- header -->
     <?php require('./public/template/header.php');
     
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {      
+    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['addNote'])) {      
       $setnotes =$connect->exePrepaQuery($bulletin->setNote($_POST['code'],$_POST['matiere'],$_POST['coef'],$_POST['note']));
       echo "<b> ajout reussi</b>";
+    }
+    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['addMatiere'])) {
+        $setmatiere= $connect->exePrepaQuery($bulletin->setMatiere($_POST['matiere']));
+        header('location: ./note_add.php');
     }
     ?>
 
@@ -43,11 +47,20 @@
               <label for="coef"> coef</label>
                 <input type="number" name="coef"  min="1" max="4">
               
-                <input type="submit" class="btn btn-primary" value="add">
+                <input type="submit" name="addNote" class="btn btn-primary" value="add">
               
             </div>
 
           </form>
+        </div>
+        <div class="row col-5 m-3">
+                  <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
+                    <div class="input-group flex-nowrap">
+                      <span class="input-group-text" id="addon-wrapping">matière</span>
+                      <input type="text" name="matiere" class="form-control" placeholder="ajouté matière" >
+                      <input type="submit" name="addMatiere" class="btn btn-primary" value="add">
+                    </div>
+                  </form>
         </div>
     </main>
 
